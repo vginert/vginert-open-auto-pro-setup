@@ -1,0 +1,10 @@
+# Ensure root
+if [ "$(id -u)" != "0" ]; then
+   echo 'The uninstallation must be run by root. Use "sudo ./uninstall" instead' 1>&2
+   exit 1
+fi
+
+echo
+echo "Uninstalling pi-shutdown"
+echo "------------------------"
+./pi-shutdown/uninstall

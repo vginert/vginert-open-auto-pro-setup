@@ -1,0 +1,10 @@
+# Ensure root
+if [ "$(id -u)" != "0" ]; then
+   echo 'The instllation must be run by root. Use "sudo ./install" instead' 1>&2
+   exit 1
+fi
+
+echo
+echo "Installing pi-hutdown"
+echo "---------------------"
+./pi-shutdown/install
