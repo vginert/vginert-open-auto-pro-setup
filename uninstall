@@ -7,4 +7,6 @@ fi
 echo
 echo "Uninstalling pi-shutdown"
 echo "------------------------"
-./pi-shutdown/uninstall
+cd pi-shutdown
+./uninstall
+cd ..

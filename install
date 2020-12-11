@@ -7,4 +7,6 @@ fi
 echo
 echo "Installing pi-hutdown"
 echo "---------------------"
-./pi-shutdown/install
+cd pi-shutdown
+./install
+cd ..
