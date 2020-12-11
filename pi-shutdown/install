@@ -1,0 +1,19 @@
+# Ensure root
+if [ "$(id -u)" != "0" ]; then
+   echo 'The instllation must be run by root. Use "sudo ./install" instead' 1>&2
+   exit 1
+fi
+
+echo "Turning service off"
+systemctl disable pi-shutdown.service
+
+echo "Installing script into /usr/bin"
+cp pi-shutdown.py /usr/bin
+chmod +x /usr/bin/pi-shutdown
+
+echo "Installing service"
+cp pi-shutdown.service /lib/systemd/system
+cd /lib/systemd/system
+systemctl enable pi-shutdown.service
+
+echo "pi-shutdown installed"

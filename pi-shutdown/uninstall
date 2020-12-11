@@ -1,0 +1,16 @@
+# Ensure root
+if [ "$(id -u)" != "0" ]; then
+   echo 'The uninstallation must be run by root. Use "sudo ./uninstall" instead' 1>&2
+   exit 1
+fi
+
+echo "Turning service off"
+systemctl disable pi-shutdown.service
+
+echo "Uninstalling script from /usr/bin"
+rm /usr/bin/pi-shutdown.py
+
+echo "Uninstalling service"
+rm /lib/systemd/system/pi-shutdown.service
+
+echo "pi-shutdown uninstalled"

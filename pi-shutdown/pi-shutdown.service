@@ -1,0 +1,10 @@
+[Unit]
+Description=Monitor GPIO pin and shutdown raspbeery pi 
+
+[Service]
+ExecStart=/usr/bin/python /usr/bin/pi-shutdown.py
+Restart=on-abort
+KillSignal=SIGINT
+
+[Install]
+WantedBy=multi-user.target
