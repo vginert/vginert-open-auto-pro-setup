@@ -1,0 +1,11 @@
+# Ensure root
+if [ "$(id -u)" != "0" ]; then
+   echo 'The instllation must be run by root. Use "sudo ./install" instead' 1>&2
+   exit 1
+fi
+
+echo "Restoring splash screen backup"
+mv /usr/share/openautopro/splash1.h264.bk /usr/share/openautopro/splash1.h264
+mv /usr/share/openautopro/splash2.h264.bk /usr/share/openautopro/splash2.h264
+
+echo "Splash screen uninstalled"

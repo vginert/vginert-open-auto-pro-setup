@@ -10,3 +10,10 @@ echo "---------------------"
 cd pi-shutdown
 ./install
 cd ..
+
+echo
+echo "Installing splash screen"
+echo "---------------------"
+cd splash-screen
+./install
+cd ..
