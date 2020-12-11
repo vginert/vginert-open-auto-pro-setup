@@ -9,7 +9,7 @@ cp /usr/share/openautopro/splash1.h264 /usr/share/openautopro/splash1.h264.bk
 cp /usr/share/openautopro/splash2.h264 /usr/share/openautopro/splash2.h264.bk
 
 echo "Encoding splash to h264"
-ffmpeg -i splash1.m4v -an -vcodec libx264 -crf 23 /usr/share/openautopro/splash1.h264
-ffmpeg -i splash2.m4v -an -vcodec libx264 -crf 23 /usr/share/openautopro/splash2.h264
+ffmpeg -y -i splash1.m4v -an -vcodec libx264 -crf 23 /usr/share/openautopro/splash1.h264
+ffmpeg -y -i splash2.m4v -an -vcodec libx264 -crf 23 /usr/share/openautopro/splash2.h264
 
 echo "Splash screen installed"
